@@ -136,7 +136,7 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
-          source: "docker-compose.yml"
+          source: "docker-compose.production.yml"
           target: "kittygram"
       # Подключаемся к серверу и выполняем скрипт
       - name: Executing remote ssh commands to deploy
