@@ -58,15 +58,6 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v3
-
-      # --- НАЧАЛО ДИАГНОСТИЧЕСКИХ ШАГОВ ---
-      - name: List files in the backend directory
-        run: ls -la ./backend/
-
-      - name: Display content of .dockerignore
-        run: cat ./backend/.dockerignore
-      # --- КОНЕЦ ДИАГНОСТИЧЕСКИХ ШАГОВ ---
-
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
       - name: Login to Docker 
