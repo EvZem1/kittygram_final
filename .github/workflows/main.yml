@@ -80,6 +80,7 @@ jobs:
           context: ./backend/
           push: true
           tags: mkisa23/kittygram_backend:latest
+          no-cache: true
 
   # Сборка и пуш фронтенда
   build_frontend_and_push_to_docker_hub:
@@ -102,6 +103,7 @@ jobs:
           context: ./frontend/
           push: true
           tags: mkisa23/kittygram_frontend:latest
+          no-cache: true
 
   # сборка и пуш образа веб-сервера
   build_gateway_and_push_to_docker_hub:
@@ -124,6 +126,7 @@ jobs:
           context: ./nginx/
           push: true
           tags: mkisa23/kittygram_gateway:latest
+          no-cache: true
 
 # деплой на сервер
   deploy:
