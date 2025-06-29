@@ -13,7 +13,7 @@ services:
       - pg_data:/var/lib/postgresql/data
 
   backend:
-    build: ./backend/
+    image: mkisa23/kittygram_backend:latest
     env_file: .env
     volumes:
       - static:/app/static
@@ -22,13 +22,13 @@ services:
       - db
 
   frontend:
-    build: ./frontend/
+    image: mkisa23/kittygram_frontend:latest
     command: cp -r /app/build/. /app/static/
     volumes:
       - static:/app/static
 
   gateway:
-    build: ./nginx/
+    image: mkisa23/kittygram_gateway:latest
     ports:
       - "8000:80"
     volumes:
@@ -37,3 +37,4 @@ services:
     depends_on:
       - backend
       - frontend
+  
